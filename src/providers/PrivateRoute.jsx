@@ -6,6 +6,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     if (loading) {
+        // spinner
         return <div className="text-center py-20">
             <span className="loading loading-dots loading-xs"></span>
             <span className="loading loading-dots loading-sm"></span>

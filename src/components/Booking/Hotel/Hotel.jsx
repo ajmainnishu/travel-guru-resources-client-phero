@@ -5,9 +5,11 @@ const Hotel = ({ hotel }) => {
     return (
         <div>
             <div className="grid grid-cols-12 mb-11 gap-x-8">
+                {/* left side */}
                 <div className="col-span-4">
                     <img className="rounded-md w-full" src={img} alt="" />
                 </div>
+                {/* right side */}
                 <div className="col-span-8 flex flex-col justify-between">
                     <h4 className="text-lg font-medium">{name}</h4>
                     <div className="flex gap-x-4 text-gray-400 font-normal">
