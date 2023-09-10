@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -6,6 +6,9 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     const { logIn, passwordReset, googleSignIn, facebookSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/'
     const handleLogIn = event => {
         event.preventDefault();
         const form = event.target;
@@ -15,6 +18,7 @@ const Login = () => {
             .then(() => {
                 toast.success('Email Login Successfully');
                 form.reset();
+                navigate(from, {replace:  true})
             }).catch(error => {
                 toast.warn(error.message);
             })

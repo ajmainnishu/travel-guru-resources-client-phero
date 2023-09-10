@@ -9,7 +9,9 @@ const facebookProvider = new FacebookAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true); 
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
     const userName = (name) => {
@@ -18,15 +20,19 @@ const AuthProvider = ({ children }) => {
             .catch()
     }
     const logIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const passwordReset = (email) => {
+        setLoading(true)
         sendPasswordResetEmail(auth, email);
     }
     const facebookSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, facebookProvider);
     }
     const googleSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider);
     }
     const logOut = () => {
@@ -37,6 +43,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
+            setLoading(false);
         })
         return (() => {
             unsubscribe();
@@ -50,7 +57,8 @@ const AuthProvider = ({ children }) => {
         userName,
         facebookSignIn,
         logOut,
-        user
+        user,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
