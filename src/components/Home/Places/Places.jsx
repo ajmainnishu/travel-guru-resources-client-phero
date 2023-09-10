@@ -12,7 +12,7 @@ const Places = () => {
             .then(data => setPlaces(data))
     }, [])
     const handleClickId = (id) => {
-        const singlePlace = places.find(p => p.id == id);
+        const singlePlace = places.find(p => p.id === parseInt(id));
         setPlaceName(singlePlace)
     }
     return (
@@ -22,9 +22,9 @@ const Places = () => {
                     {
                         placeName &&
                         <div>
-                            <h2 className="text-white uppercase font-normal text-5xl">{placeName.place_name}</h2>
+                            <h2 className="text-white uppercase font-normal text-7xl">{placeName.place_name}</h2>
                             <p className="text-white pt-5 font-normal pb-7">{placeName.place_details ? placeName.place_details.slice(0, 180) : ''}...</p>
-                            <Link style={{backgroundColor: '#F9A51A'}} className='btn text-base px-7 py-3 border-0 rounded-md font-medium'>Booking <FaArrowRight /></Link>
+                            <Link to={`/places/${placeName.id}`} style={{backgroundColor: '#F9A51A'}} className='btn text-base px-7 py-3 border-0 rounded-md font-medium'>Booking <FaArrowRight /></Link>
                         </div>
                     }
                 </div>

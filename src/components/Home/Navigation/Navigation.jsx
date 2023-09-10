@@ -13,9 +13,9 @@ const Navigation = () => {
                         <input type="text" placeholder="Search your Destination" className="input bg-transparent border-white w-24 md:w-auto" />
                     </div>
                     <Link to='/'>Home</Link>
-                    <Link>Destination</Link>
-                    <Link>Blog</Link>
-                    <Link>Contact</Link>
+                    <Link to='/destination'>Destination</Link>
+                    <Link to='/blog'>Blog</Link>
+                    <Link to='/contact'>Contact</Link>
                     <Link style={{backgroundColor: '#F9A51A'}} className='btn text-base px-7 py-3 border-0 rounded-md font-medium'>Login</Link>
                 </div>
             </div>
