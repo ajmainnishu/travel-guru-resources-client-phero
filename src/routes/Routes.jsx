@@ -5,6 +5,8 @@ import Destination from "../components/Destination/Destination";
 import Blog from "../components/Blog/Blog";
 import Contact from "../components/Contact/Contact";
 import PlaceBooking from "../components/PlaceBooking/PlaceBooking";
+import Booking from "../layout/Booking";
+import Login from "../components/Booking/Login/Login";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,16 @@ const router = createBrowserRouter([
             {
                 path: 'contact',
                 element: <Contact />
+            }
+        ]
+    },
+    {
+        path: 'booking',
+        element: <Booking />,
+        children: [
+            {
+                path: 'login',
+                element: <Login />
             }
         ]
     }
