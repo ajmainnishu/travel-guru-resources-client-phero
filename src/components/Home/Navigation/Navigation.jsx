@@ -6,19 +6,17 @@ const Navigation = () => {
         <div className='w-5/6 mx-auto py-9'>
             <div className='navbar'>
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl">
-                        <img style={{ height: '56px' }} src={logo} alt="logo" />
-                    </a>
+                    <img style={{ height: '56px', filter: 'brightness(1000%)'}} src={logo} alt="logo" />
                 </div>
-                <div className='gap-12'>
+                <div className='gap-12 text-white font-medium'>
                     <div className="form-control">
-                        <input type="text" placeholder="Search your Destination" className="input input-bordered w-24 md:w-auto" />
+                        <input type="text" placeholder="Search your Destination" className="input bg-transparent border-white w-24 md:w-auto" />
                     </div>
-                    <Link className='inline-block'>Home</Link>
+                    <Link to='/'>Home</Link>
                     <Link>Destination</Link>
                     <Link>Blog</Link>
                     <Link>Contact</Link>
-                    <Link className='btn'>Login</Link>
+                    <Link style={{backgroundColor: '#F9A51A'}} className='btn text-base px-7 py-3 border-0 rounded-md font-medium'>Login</Link>
                 </div>
             </div>
         </div>
