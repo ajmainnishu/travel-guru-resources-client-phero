@@ -38,7 +38,7 @@ const PlaceBooking = () => {
                                 <input type="date" className="input input-bordered rounded-md" />
                             </div>
                         </div>
-                        <Link to={`/hotels/${placeBook.id}`} style={{backgroundColor: '#F9A51A'}} className="btn capitalize w-full font-medium rounded-md border-0">Start Booking</Link>
+                        <Link to={`/booking/${placeBook.id}`} style={{backgroundColor: '#F9A51A'}} className="btn capitalize w-full font-medium rounded-md border-0">Start Booking</Link>
                     </form>
                 </div>
             </div>
