@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 
-const Login = () => {
+const Registration = () => {
     return (
         <div className="py-24">
             <div className="w-5/12 border-2 mx-auto py-9 px-14 rounded-sm">
-                <h2 className="text-2xl font-bold mb-10">Login</h2>
+                <h2 className="text-2xl font-bold mb-10">Create an account</h2>
                 <form>
+                    <input className="input form-control input-bordered mb-8 w-full" type="text" name="firstName" id="" placeholder="First Name" />
+                    <input className="input form-control input-bordered mb-8 w-full" type="text" name="lastName" id="" placeholder="Last Name" />
                     <input className="input form-control input-bordered mb-8 w-full" type="email" name="email" id="" placeholder="Email" />
-                    <input className="input form-control input-bordered w-full" type="password" name="password" id="" placeholder="Password" />
-                    <div className="flex justify-between items-center pt-6 pb-12 font-medium">
-                        <p><input type="checkbox" name="" id="" />&nbsp;Remember Me</p>
-                        <p className="text-yellow-400 underline">Forgot Password</p>
-                    </div>
-                    <button style={{ backgroundColor: '#F9A51A' }} className='btn text-base px-7 py-3 border-0 rounded-md font-medium w-full capitalize'>Login</button>
+                    <input className="input form-control input-bordered w-full mb-8" type="password" name="password" id="" placeholder="Password" />
+                    <input className="input form-control input-bordered w-full" type="password" name="confirmPassword" id="" placeholder="Confirm Password" />
+                    <button style={{ backgroundColor: '#F9A51A' }} className='btn text-base px-7 py-3 border-0 rounded-md font-medium w-full mt-7 capitalize'>Create an account</button>
                 </form>
-                <p className="pt-4 text-center font-medium">Don't have an account ? <Link to='/booking/registration' className="text-yellow-400 underline">Create an account</Link></p>
+                <p className="pt-4 text-center font-medium">Already have an account ? <Link to='/booking/login' className="text-yellow-400 underline">Login</Link></p>
             </div>
             <div className="flex items-center justify-center py-9">
                 <hr className="w-52 mr-3" />
@@ -34,4 +33,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Registration;

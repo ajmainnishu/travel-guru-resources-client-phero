@@ -7,6 +7,7 @@ import Contact from "../components/Contact/Contact";
 import PlaceBooking from "../components/PlaceBooking/PlaceBooking";
 import Booking from "../layout/Booking";
 import Login from "../components/Booking/Login/Login";
+import Registration from "../components/Booking/Registration/Registration";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login />
+            },
+            {
+                path: 'registration',
+                element: <Registration />
             }
         ]
     }
